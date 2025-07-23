@@ -1,0 +1,76 @@
+print('CONVERT BASE10 TO DECIMAL')
+a=str(input('Enter no.: '))
+
+def convert(input):
+
+    L=input.split(".")
+    main=L[0]
+    #print(L[0])
+
+    #print(decimal)
+    a=int(main)
+    
+    #CASE IF NOT ONLY DECIMAL 
+    if float(input)>1:
+        Q=[]
+        q=a//2
+        while q != 0:
+            q=a//2
+            rem=a%2
+            Q.insert(0,rem)
+            a=q
+        if a==1:
+            final_main=1
+        else:
+            mainc=""
+            for i in Q:
+                mainc+=str(i)
+            final_main=int(mainc)
+            if float(input)%1 == 0:
+                return(final_main)
+    #CASE FOR 1:
+    elif float(input)==1 or float(input)==0:
+
+        return(input)
+    #Decimal Convert
+    if float(input)%1 != 0:
+        decimal=0
+        decimal=L[1]
+        d=int(decimal)*(10**(-1*(len(str(decimal)))))
+        #print(d)
+        l=[]
+        e=d
+        while e!=0:
+            b=e*2
+            l.append(int(b//1))
+            e=b%1
+        decic=""
+        for i in l:
+            decic+=str(i)
+        #print(decic)
+        decim=int(decic)*(10**(-1*(len(str(decic)))))
+        if float(input)>1:
+            return(final_main+decim)
+        else:
+            return(decim)
+print(a, "converted to binary is: ", convert(a))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
