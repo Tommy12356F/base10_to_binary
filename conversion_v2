@@ -12,7 +12,7 @@ while True:
         base1=int(input("Enter base of input no: "))
         base2=int(input("Enter base to which the no. is to be converted: "))
     elif option not in S:
-        print("Enter choice no.")
+        print("Enter valid choice no.")
         
     
     if option in S:
@@ -140,14 +140,15 @@ while True:
             
             
         if option==1:
-            print(a, "converted to ",digit," bit is: ", convert(a,digit))
+            if digit<=10:
+                print(a, "converted to ",digit," bit is: ", convert(a,digit))
         elif option==2:
-            if valid==1:        
+            if valid==1 and digit<=10:        
                 print(a, "converted from base",digit," to decimal"," is: ", invert(a,digit))
             else:
                 print("Program ended due to invalid base input")
         elif option==3:
-            if valid==1:        
+            if valid==1 and base1<=10 and base2<=10:        
 
                 print(a, "converted from base",base1," to base",base2," is: ", intercovert(base1,base2))
             else:
